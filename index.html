@@ -1,13 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecommerce Product Page</title>
+
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
+    <header class="fixed w-full bg-white shadow">
+      <nav class="container relative mx-auto p-6">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center justify-center space-x-4 md:space-x-12">
+            <!--Hamburger icon-->
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+              <img id="icon-open" class="flex" src="images/icon-menu.svg" alt="" />
+              <img id="icon-close" class="hidden" src="images/icon-close.svg" alt="" />
+            </button>
+            <!--Logo-->
+            <img src="images/logo.svg" alt="logo" />
+            <!--Menu items-->
+            <div class="hidden space-x-6 text-DarkBlue font-semibold md:flex">
+              <a href="" class="hover:text-DarkGrayishBlue">Collections</a>
+              <a href="" class="hover:text-DarkGrayishBlue">Men</a>
+              <a href="" class="hover:text-DarkGrayishBlue">Women</a>
+              <a href="" class="hover:text-DarkGrayishBlue">About</a>
+              <a href="" class="hover:text-DarkGrayishBlue">Contact</a>
+            </div>
+          </div>
+
+          <!--Cart & Profile-->
+          <div class="flex items-center justify-center space-x-4">
+            <a id="icon-cart" href="#" class=""
+              ><img src="images/icon-cart.svg" alt="icon-cart"
+            /></a>
+            <a id="icon-avatar" href="#" class="w-8"
+              ><img src="images/image-avatar.png" alt="image-avatar"
+            /></a>
+          </div>
+        </div>
+
+        <!--mobile menu-->
+        <div class="md:hidden">
+          <div
+            id="menu"
+            class="absolute hidden flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white top-3 left-0 right-1/2 h-screen drop-shadow-md sm:w-auto sm:self-center"
+          >
+            <a href="" class="hover:text-DarkGrayishBlue">Collections</a>
+            <a href="" class="hover:text-DarkGrayishBlue">Men</a>
+            <a href="" class="hover:text-DarkGrayishBlue px-5">Women</a>
+            <a href="" class="hover:text-DarkGrayishBlue">About</a>
+            <a href="" class="hover:text-DarkGrayishBlue px-5">Contact</a>
+          </div>
+        </div>
+
+        <!--Cart-->
+        <div id="cart" class="absolute hidden items-center justify-center rounded-lg pb-8 mt-10 space-y-6 font-bold bg-white top-6 left-6 right-6 drop-shadow-md sm:w-auto sm:self-center md:right-0 md:left-auto md:w-2/5 md:self-start">
+          <div class="w-full flex flex-col space-y-6">
+            <div class="w-full shadow">
+              <p class="p-4 px-2 text-md text-VeryDarkBlue font-semibold md:px-10">Cart</p>
+            </div>
+            <div class="flex items-center justify-center w-full">
+              <p class="hidden">Your cart is empty.</p>
+              <div class="flex flex-col items-center space-y-6">
+                <div class="flex items-center space-x-6">
+                  <img class="w-10 rounded-md" src="images/image-product-1-thumbnail.jpg" alt="">
+                  <div class="flex flex-col">
+                    <p class="text-md text-GrayishBlue font-medium">Fall Limited Edition Sneakers</p>
+                    <p class="text-md text-GrayishBlue">$125.00 x 3 <span class="text-md text-Black">$375.00</span></p>
+                  </div>
+                  <a href="">
+                    <img src="images/icon-delete.svg" alt="icon-delete">
+                  </a>
+                </div>
+                <a href="#" class="py-3 text-md text-White text-center font-medium bg-Orange rounded-lg w-full">
+                  Checkout
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <main>
-      <section></section>
+      <section">
+        <div class="container mx-auto py-16 flex flex-col items-center justify-center space-x-0 md:px-12 md:pt-32 md:pb-14 md:flex-row md:space-x-6">
+          <!--Product Images-->
+          <div class="max-w-md md:flex md:flex-col md:space-y-6 md:max-w-none">
+              <img class="md:w-80 md:rounded-lg" src="images/image-product-1.jpg" alt="image-product-1" />
+              <img class="hidden md:w-80 md:rounded-lg" src="images/image-product-2.jpg" alt="image-product-2" />
+              <img class="hidden md:w-80 md:rounded-lg" src="images/image-product-3.jpg" alt="image-product-3" />
+              <img class="hidden md:w-80 md:rounded-lg" src="images/image-product-4.jpg" alt="image-product-4" />
+              <div class="hidden space-x-5 items-center md:flex">
+                <img id="product-1" class="active w-16 rounded-lg cursor-pointer" src="images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail">
+                <img id="product-2" class="w-16 rounded-lg cursor-pointer" src="images/image-product-2-thumbnail.jpg" alt="image-product-1-thumbnail">
+                <img id="product-3" class="w-16 rounded-lg cursor-pointer" src="images/image-product-3-thumbnail.jpg" alt="image-product-1-thumbnail">
+                <img id="product-4" class="w-16 rounded-lg cursor-pointer" src="images/image-product-4-thumbnail.jpg" alt="image-product-1-thumbnail">
+              </div>
+          </div>
+          <!--Product Card-->
+          <div class="px-10 pt-4 flex flex-col items-center justify-center space-y-6 md:py-8 md:w-1/2">
+            <!--Card Body-->
+            <div class="flex flex-col items-start space-y-3">
+              <p class="text-sm text-left text-Orange font-medium">
+                SNEAKER COMPANY
+              </p>
+              <h5 class="text-3xl text-VeryDarkBlue font-semibold">Fall Limited Edition Sneakers</h5>
+              <p class="text-md text-DarkGrayishBlue">
+                These low-profile sneakers are your perfect casual wear
+                companion. Featuring a durable rubber outer sole, they’ll
+                withstand everything the weather can offer.
+              </p>
+              <div class="flex items-center justify-between space-x-20 md:flex-col md:items-start md:space-x-0 md:space-y-3">
+                <div class="flex items-center space-x-3">
+                  <h5 class="text-3xl text-semi-bold text-VeryDarkBlue">$125.00</h5>
+                  <p class="p-1 text-sm text-Orange bg-PaleOrange rounded-md">50%</p>
+                </div>
+                <p class="text-sm text-GrayishBlue line-through">$250.00</p>
+              </div>
+            </div>
+            <!--Card Footer-->
+            <div class="w-full flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-3">
+              <div class="p-4 flex items-center justify-between bg-LightGrayishBlue rounded-lg md:w-1/3">
+                <a href="#" class=""><img src="images/icon-minus.svg" alt="icon-minus"></a>
+                <p class="text-md text-Black">0</p>
+                <a href="#" class=""><img src="images/icon-plus.svg" alt="icon-plus"></a>
+              </div>
+              <a href="#"
+              class="flex items-center justify-center space-x-3 w-full py-4 text-White text-md bg-Orange hover:text-White hover:bg-PaleOrange shadow-xl shadow-PaleOrange rounded-lg md:px-12"
+              >
+                <img src="images/icon-cart.svg" alt="icon-cart">
+                <p class="text-sm font-medium">Add to cart</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="js/script.js"></script>
